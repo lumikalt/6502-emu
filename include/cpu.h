@@ -1,6 +1,7 @@
 #pragma once
 
-#include "./lib.h"
+#include "./util.h"
+#include "./mem.h"
 
 typedef struct {
   Word pc; // Program Counter
@@ -17,4 +18,6 @@ typedef struct {
   Byte c, z, i, d, b, v, n : 1;
 } CPU;
 
-void cpu_reset(CPU *cpu);
+/// Bootup Sequence.
+/// TODO: Properly implement it, as the C64 does a few things.
+void cpu_reset(CPU *, Mem *);

@@ -1,8 +1,9 @@
 #include "../include/lib.h"
+#include <stdlib.h>
 
 int main(void) {
   CPU cpu;
-  Mem mem;
+  Mem* mem = malloc(MEM_SIZE * 16);
 
-  cpu_reset(&cpu);
+  cpu_reset(&cpu, mem);
 }

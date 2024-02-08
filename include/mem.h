@@ -1,7 +1,9 @@
 #pragma once
 
-#include "lib.h"
+#include "util.h"
 
-typedef struct {
+#define MEM_SIZE 1024 * 64
 
-} Mem;
+typedef Byte Mem[MEM_SIZE];
+
+void mem_clear(Mem *);
