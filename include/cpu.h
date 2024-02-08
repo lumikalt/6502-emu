@@ -1,7 +1,7 @@
 #pragma once
 
-#include "./util.h"
 #include "./mem.h"
+#include "./util.h"
 
 typedef struct {
   Word pc; // Program Counter
@@ -15,7 +15,7 @@ typedef struct {
   // Processor Status Flags
   // Carry; Zero; Interrupt disable; Decimal mode;
   // Break command; oVerflow; Negative
-  Byte c, z, i, d, b, v, n : 1;
+  Byte c : 1, z : 1, i : 1, d : 1, b : 1, v : 1, n : 1;
 } CPU;
 
 /// Bootup Sequence.
