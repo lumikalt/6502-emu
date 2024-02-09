@@ -4,7 +4,7 @@
 
 int main(void) {
   CPU cpu;
-  Mem *mem = malloc(MEM_SIZE * 16);
+  Mem *mem = malloc(MEM_SIZE * 2);
 
   cpu_reset(&cpu, mem);
   (*mem)[0xFFFC] = 0xA9;
