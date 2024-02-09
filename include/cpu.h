@@ -18,8 +18,9 @@ typedef struct {
   Byte c : 1, z : 1, i : 1, d : 1, b : 1, v : 1, n : 1;
 } CPU;
 
-/// Bootup Sequence.
+/// # Bootup Sequence.
 /// TODO: Properly implement it, as the C64 does a few things.
 void cpu_reset(CPU *, Mem *);
 
-void cpu_exec(CPU *, Mem *, size_t);
+/// Execute `n` cycles from the position of the *program counter*.
+void cpu_exec(CPU *, Mem *, size_t n);
