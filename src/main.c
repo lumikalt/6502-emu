@@ -7,12 +7,12 @@ int main(void) {
   Mem *mem = malloc(MEM_SIZE * 2);
 
   cpu_reset(&cpu, mem);
-  cpu.x = 2;
-  (*mem)[0xFFFC] = 0xE8;
+  (*mem)[0xFFFC] = 0xA5;
+  (*mem)[0xFFFD] = 0x11;
+  (*mem)[0x0011] = 0x42;
+  cpu_exec(&cpu, mem, 3);
 
-  cpu_exec(&cpu, mem, 2);
-
-  printf("0x%02x\n", cpu.x);
+  printf("0x%02x\n", cpu.a);
 
   free(mem);
 }
